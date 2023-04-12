@@ -1,4 +1,4 @@
-package com.example.oblig2webny;
+package com.example.oblig3relasjonsdatabase;
 
 public class Billett {
     private String filmDropdown;

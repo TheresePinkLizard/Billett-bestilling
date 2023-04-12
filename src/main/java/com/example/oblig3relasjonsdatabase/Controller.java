@@ -1,4 +1,4 @@
-package com.example.oblig2webny;
+package com.example.oblig3relasjonsdatabase;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

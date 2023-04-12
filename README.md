@@ -9,4 +9,4 @@ Github repo URL: https://github.com/data1700-v23/oblig-2-TheresePinkLizard.git
 Fullt navn: Therese Trollbu
 
 Kort beskrivelse av applikasjon (5-10 setninger):
-Oblig 2
+Oblig 3

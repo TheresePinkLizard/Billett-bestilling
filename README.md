@@ -4,7 +4,7 @@ OsloMet brukernavn: S333329
 
 GitHub brukernavn: TheresePinkLizard
 
-Github repo URL: https://github.com/data1700-v23/oblig-2-TheresePinkLizard.git
+Github repo URL: https://github.com/data1700-v23/oblig-3-TheresePinkLizard.git
 
 Fullt navn: Therese Trollbu
 

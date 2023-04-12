@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="application/javascript" src="script.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: lightgray;
+      padding-left: 50px;
+      width: 800px;
+      height: 1000px;
+    }
+    #wrapper{
+      width: 500px;
+      height: 330px;
+      padding-top: 20px;
+    }
+
+    #filmSelect{
+      padding-bottom: 20px;
+    }
+    #skjema{
+      width: 500px;
+      height: 220px;
+      float: left;
+      line-height: 2;
+    }
+
+    #alleBillettene{
+      width: 500px;
+      height: 200px;
+      float: bottom;
+    }
+
+    .feltLeft{
+      float: left;
+      width: 270px;
+      height: 30px;
+    }
+    .feltRight{
+      float: right;
+      color: red;
+      width: 200px;
+      height: 30px;
+
+    }
+  .feilMld{
+    float: right;
+    color: red;
+    width: 200px;
+    height: 200px;
+    inline-size: 3px;
+  }
+  .tekstBoks{
+    width: 80px;
+    height: 200px;
+    float: left;
+  }
+
+
+  </style>
+</head>
+<body>
+
+<h1>Bestilling av kinobilletter</h1>
+<div id="wrapper">
+  <div id="filmSelect">
+    <label for="filmDropdown"> Velg film: </label>
+    <select id="filmDropdown">
+      <option>Default</option>
+      <option>Dune</option>
+      <option>Signs</option>
+      <option>Summer</option>
+    </select>
+    <div class = feltRight id="feilfilmDropdown"></div>
+  </div>
+
+
+  <div id="skjema">
+    <!--Labels-->
+    <div class="tekstBoks">
+      <label for="Antall">Antall </label>
+      <label for="fornavn">Fornavn </label>
+      <label for="etternavn">Etternavn </label>
+      <label for="tlf">Telefonnr</label>
+      <label for="epost">Epost </label>
+    </div>
+   <div>
+      <div class="feltLeft">
+        <div class="feltLeft"><input  type="text" id="antall"/></div>
+        <div class="feltLeft"> <input type="text" id="fornavn"/><br></div>
+        <div class="feltLeft"><input type="text" id="etternavn"/><br></div>
+        <div class="feltLeft"><input type="text" id="tlf"/><br></div>
+      <div class="feltLeft"><input type="text" id="epost"/></div>
+      </div>
+      <div class="feilMld">
+        <div class="feltRight"><p id="feilAntall"> </p></div>
+        <div class="feltRight"><p id="feilFornavn"> </p></div>
+        <div class="feltRight"><p id="feilEtternavn"> </p></div>
+        <div class="feltRight"><p id="feilTlf"> </p></div>
+        <div class="feltRight"><p id="feilEpost"> </p></div>
+      </div>
+      <!-- Knapp-->
+   </div>
+  </div>
+  <div>
+    <button class="feltLeft" onClick="lagObjekt()">Kjøp billett</button>
+  </div>
+
+</div>
+<div>
+  <h2> Alle billetter</h2>
+  <button id="knapp2" onClick="emptyArray()">Slett alle billettene</button>
+  <!--Knapp som tømmer array-->
+
+  <!--billetter skrives ut her-->
+  <div id="alleBillettene">
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+</body>
+</html>

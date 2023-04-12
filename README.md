@@ -1,11 +1,12 @@
 Oblig 2
 =======
-OsloMet brukernavn: 
+OsloMet brukernavn: S333329
 
-GitHub brukernavn: 
+GitHub brukernavn: TheresePinkLizard
 
-Github repo URL: 
+Github repo URL: https://github.com/data1700-v23/oblig-2-TheresePinkLizard.git
 
-Fullt navn: 
+Fullt navn: Therese Trollbu
 
 Kort beskrivelse av applikasjon (5-10 setninger):
+Oblig 2

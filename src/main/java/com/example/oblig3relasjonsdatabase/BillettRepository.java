@@ -19,7 +19,8 @@ public class BillettRepository {
         db.update(sql,innBillett.getFilmDropdown(), innBillett.getAntall(), innBillett.getFornavn(), innBillett.getEtternavn(), innBillett.getTlf(), innBillett.getEpost());
     }
     public List<Billett> hentAlleBillettene(){
-        String sql = "SELECT * FROM Billett";
+        // sorterer objektene
+        String sql = "SELECT * FROM Billett ORDER BY etternavn";
         List<Billett> alleBilletter = db.query(sql,new BeanPropertyRowMapper(Billett.class));
         return alleBilletter;
     }

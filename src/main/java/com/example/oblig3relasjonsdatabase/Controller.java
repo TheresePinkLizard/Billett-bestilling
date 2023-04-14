@@ -12,12 +12,12 @@ import java.util.List;
 public class Controller {
 
     @Autowired
-    private BillettRepository rep;
+    BillettRepository rep;
 
     //mottar billetter
     @PostMapping("/leggTilBillett")
     public void leggTil (Billett enBillett){
-        rep.lagreBillett(enBillett);
+        rep.save(enBillett);
 
     }
     // henter billetter

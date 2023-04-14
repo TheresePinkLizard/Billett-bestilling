@@ -1,3 +1,4 @@
+/*
 CREATE TABLE billett
 (
     id           integer     not null auto_increment primary key,
@@ -8,3 +9,4 @@ CREATE TABLE billett
     tlf          VARCHAR(50) NOT NULL,
     epost        VARCHAR(50) NOT NULL
 );
+ */

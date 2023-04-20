@@ -10,5 +10,5 @@ public interface BillettRepository extends JpaRepository<Billett, Long> {
 
     // sorterer etter etternavn
     List<Billett> findByOrderByEtternavn();
- 
+
 }

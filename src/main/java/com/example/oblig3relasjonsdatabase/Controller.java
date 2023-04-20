@@ -12,23 +12,23 @@ import java.util.List;
 public class Controller {
 
     @Autowired
-    private BillettRepository rep;
+    BillettRepository rep;
 
     //mottar billetter
     @PostMapping("/leggTilBillett")
     public void leggTil (Billett enBillett){
-        rep.lagreBillett(enBillett);
-
+        rep.save(enBillett);
     }
     // henter billetter
     @GetMapping("/hentBilletter")
     public List<Billett> hent (){
-        return rep.hentAlleBillettene();
+        List<Billett> billettList = rep.findAll();
+        return billettList;
     }
 
 
     @GetMapping("/slettBillettene")
     public void slettBillettene(){
-        rep.slettAlleBilletter();
+        rep.deleteAll();
     }
 }

@@ -1,6 +1,23 @@
 package com.example.oblig3relasjonsdatabase;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@Entity
+@Table(name="billett")
+
 public class Billett {
+
+    @Id
+    @GeneratedValue
+    private Integer id;
     private String filmDropdown;
     private String antall;
 
@@ -9,12 +26,11 @@ public class Billett {
     private String tlf;
     private String epost;
 
-    //tom konstruktør
-    public Billett (){}
 
     //konstruktør
 
-    public Billett(String filmDropdown, String antall, String fornavn, String etternavn, String tlf, String epost) {
+    public Billett(Integer id, String filmDropdown, String antall, String fornavn, String etternavn, String tlf, String epost) {
+        this.id = id;
         this.filmDropdown = filmDropdown;
         this.antall = antall;
         this.fornavn = fornavn;
@@ -23,52 +39,16 @@ public class Billett {
         this.epost = epost;
     }
 
-    public String getFilmDropdown() {
-        return filmDropdown;
+    @Override
+    public String toString() {
+        return "Billett{" +
+                "id=" + id +
+                ", filmDropdown='" + filmDropdown + '\'' +
+                ", antall='" + antall + '\'' +
+                ", fornavn='" + fornavn + '\'' +
+                ", etternavn='" + etternavn + '\'' +
+                ", tlf='" + tlf + '\'' +
+                ", epost='" + epost + '\'' +
+                '}';
     }
-
-    public void setFilmDropdown(String filmDropdown) {
-        this.filmDropdown = filmDropdown;
-    }
-
-    public String getAntall() {
-        return antall;
-    }
-
-    public void setAntall(String antall) {
-        this.antall = antall;
-    }
-
-    public String getFornavn() {
-        return fornavn;
-    }
-
-    public void setFornavn(String fornavn) {
-        this.fornavn = fornavn;
-    }
-
-    public String getEtternavn() {
-        return etternavn;
-    }
-
-    public void setEtternavn(String etternavn) {
-        this.etternavn = etternavn;
-    }
-
-    public String getTlf() {
-        return tlf;
-    }
-
-    public void setTlf(String tlf) {
-        this.tlf = tlf;
-    }
-
-    public String getEpost() {
-        return epost;
-    }
-
-    public void setEpost(String epost) {
-        this.epost = epost;
-    }
-
 }

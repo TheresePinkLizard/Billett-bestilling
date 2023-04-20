@@ -18,17 +18,17 @@ public class Controller {
     @PostMapping("/leggTilBillett")
     public void leggTil (Billett enBillett){
         rep.save(enBillett);
-
     }
     // henter billetter
     @GetMapping("/hentBilletter")
     public List<Billett> hent (){
-        return rep.hentAlleBillettene();
+        List<Billett> billettList = rep.findAll();
+        return billettList;
     }
 
 
     @GetMapping("/slettBillettene")
     public void slettBillettene(){
-        rep.slettAlleBilletter();
+        rep.deleteAll();
     }
 }

@@ -5,11 +5,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="billett")
 
@@ -26,18 +28,6 @@ public class Billett {
     private String tlf;
     private String epost;
 
-
-    //konstruktør
-
-    public Billett(Integer id, String filmDropdown, String antall, String fornavn, String etternavn, String tlf, String epost) {
-        this.id = id;
-        this.filmDropdown = filmDropdown;
-        this.antall = antall;
-        this.fornavn = fornavn;
-        this.etternavn = etternavn;
-        this.tlf = tlf;
-        this.epost = epost;
-    }
 
     @Override
     public String toString() {

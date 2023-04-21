@@ -1,4 +1,6 @@
 /*
+Bruker denne filen lengre fordi jeg endret til ny metode
+
 CREATE TABLE billett
 (
     id           integer     not null auto_increment primary key,

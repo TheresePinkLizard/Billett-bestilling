@@ -7,6 +7,8 @@ GitHub brukernavn: TheresePinkLizard
 
 Github repo URL: https://github.com/data1700-v23/oblig-3-TheresePinkLizard.git
 
+Youtube lenke: 
+
 Fullt navn: Therese Trollbu
 
 Kort beskrivelse av applikasjon (5-10 setninger): Oblig 3

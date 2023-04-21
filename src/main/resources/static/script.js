@@ -25,7 +25,6 @@ function lagObjekt() {
 
 
     if(billett.filmDropdown === "Default") {
-        //document.getElementById("feilfilmDropdown").innerHTML = ;
         $("#feilfilmDropdown").text("Du må velge film");
         filmBoolean = false;
     } else{

@@ -19,13 +19,14 @@ public class Controller {
     public void leggTil (Billett enBillett){
         rep.save(enBillett);
     }
+
     // henter billetter
     @GetMapping("/hentBilletter")
     public List<Billett> hent (){
         return rep.findByOrderByEtternavn();
     }
 
-
+    // slette billetter
     @GetMapping("/slettBillettene")
     public void slettBillettene(){
         rep.deleteAll();

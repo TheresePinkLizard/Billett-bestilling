@@ -19,7 +19,7 @@ public class Billett {
 
     @Id
     @GeneratedValue
-    private Integer id;
+    private int id;
     private String filmDropdown;
     private String antall;
 
@@ -27,6 +27,8 @@ public class Billett {
     private String etternavn;
     private String tlf;
     private String epost;
+
+
 
 
     @Override

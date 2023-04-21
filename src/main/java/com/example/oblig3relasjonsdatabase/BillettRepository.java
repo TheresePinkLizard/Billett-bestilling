@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface BillettRepository extends JpaRepository<Billett, Long> {
+public interface BillettRepository extends JpaRepository<Billett, Integer> {
 
     // sorterer etter etternavn
     List<Billett> findByOrderByEtternavn();

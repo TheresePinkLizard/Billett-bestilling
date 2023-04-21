@@ -25,55 +25,55 @@ function lagObjekt() {
 
 
     if(billett.filmDropdown === "Default") {
+        //document.getElementById("feilfilmDropdown").innerHTML = ;
+        $("#feilfilmDropdown").text("Du må velge film");
         filmBoolean = false;
-        document.getElementById("feilfilmDropdown").innerHTML = "Du må velge film";
     } else{
-        document.getElementById("feilfilmDropdown").innerHTML = "";
+        $("#feilfilmDropdown").text("");
         filmBoolean = true;
     }
     if (billett.antall <=0 ){
-        document.getElementById("feilAntall").innerHTML = feil;
+        $("#feilAntall").text(feil);
         antallBoolean = false;
     } else{
-        document.getElementById("feilAntall").innerHTML = "";
+        $("#feilAntall").text("");
         antallBoolean = true;
     }
     if (billett.fornavn <=0 ){
-        document.getElementById("feilFornavn").innerHTML = feil;
+        $("#feilFornavn").text(feil);
         fornavnBoolean = false;
     }else{
-        document.getElementById("feilFornavn").innerHTML = "";
+        $("#feilFornavn").text("");
        fornavnBoolean= true;
     }
     if (billett.etternavn <=0 ){
-        document.getElementById("feilEtternavn").innerHTML = feil;
+        $("#feilEtternavn").text(feil);
         etternavnBoolean= false;
     }else{
-        document.getElementById("feilEtternavn").innerHTML = "";
+        $("#feilEtternavn").text("");
         etternavnBoolean = true;
     }
     if (billett.tlf <=0 ){
-        document.getElementById("feilTlf").innerHTML = feil;
+        $("#feilTlf").text(feil);
         tlfBoolean = false;
     }else{
-        document.getElementById("feilTlf").innerHTML = "";
+        $("#feilTlf").text("");
        tlfBoolean= true;
     }
     if (billett.epost <=0 ){
-        document.getElementById("feilEpost").innerHTML = feil;
+        $("#feilEpost").text(feil);
         epostBoolean= false;
     } else {
-        document.getElementById("feilEpost").innerHTML = "";
+        $("#feilEpost").text("");
         epostBoolean = true;
     }
     // sjekker at alt er klart før posting
     if (filmBoolean && antallBoolean && fornavnBoolean && etternavnBoolean && tlfBoolean && epostBoolean) {
         <!--Sender godkjent billett til controller-->
         $.post("/leggTilBillett", billett, function (data) {
-
+            // funksjon som henter fra server
+            hent();
         })
-        // funksjon som henter fra server
-        hent();
 
         // resetter felter
         if (antall.value !=="") {

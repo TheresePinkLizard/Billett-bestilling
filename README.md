@@ -7,7 +7,7 @@ GitHub brukernavn: TheresePinkLizard
 
 Github repo URL: https://github.com/data1700-v23/oblig-3-TheresePinkLizard.git
 
-Youtube lenke: 
+Youtube lenke: https://youtu.be/MCOa_tdDtRA
 
 Fullt navn: Therese Trollbu
 

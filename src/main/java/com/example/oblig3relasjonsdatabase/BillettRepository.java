@@ -12,3 +12,5 @@ public interface BillettRepository extends JpaRepository<Billett, Integer> {
     List<Billett> findByOrderByEtternavn();
 
 }
+
+//når det er flere tabeller så skriv inn en tilsvarende overfor her

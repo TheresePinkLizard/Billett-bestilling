@@ -19,7 +19,7 @@ public class Billett {
 
     @Id
     @GeneratedValue
-    private int id;
+    private int id; // primærnøkkel
     private String filmDropdown;
     private String antall;
 

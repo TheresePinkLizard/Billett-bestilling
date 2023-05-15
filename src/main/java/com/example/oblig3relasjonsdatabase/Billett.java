@@ -30,7 +30,7 @@ public class Billett {
 
 
 
-
+/*
     @Override
     public String toString() {
         return "Billett{" +
@@ -43,4 +43,6 @@ public class Billett {
                 ", epost='" + epost + '\'' +
                 '}';
     }
+    */
+
 }

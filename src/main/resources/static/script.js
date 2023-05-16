@@ -20,10 +20,10 @@ function lagObjekt() {
     let antallBoolean;
     let fornavnBoolean;
     let etternavnBoolean;
-    let tlfBoolean;
+    //let tlfBoolean;
     let epostBoolean;
 
-
+/*
     if(billett.filmDropdown === "Default") {
         $("#feilfilmDropdown").text("Du må velge film");
         filmBoolean = false;
@@ -31,6 +31,8 @@ function lagObjekt() {
         $("#feilfilmDropdown").text("");
         filmBoolean = true;
     }
+
+ */
     if (billett.antall <=0 ){
         $("#feilAntall").text(feil);
         antallBoolean = false;
@@ -52,6 +54,7 @@ function lagObjekt() {
         $("#feilEtternavn").text("");
         etternavnBoolean = true;
     }
+    /*
     if (billett.tlf <=0 ){
         $("#feilTlf").text(feil);
         tlfBoolean = false;
@@ -59,6 +62,8 @@ function lagObjekt() {
         $("#feilTlf").text("");
        tlfBoolean= true;
     }
+
+     */
     if (billett.epost <=0 ){
         $("#feilEpost").text(feil);
         epostBoolean= false;
@@ -67,7 +72,8 @@ function lagObjekt() {
         epostBoolean = true;
     }
     // sjekker at alt er klart før posting
-    if (filmBoolean && antallBoolean && fornavnBoolean && etternavnBoolean && tlfBoolean && epostBoolean && validerTlf()) {
+    //tlfBoolean && filmBoolean
+    if (antallBoolean && fornavnBoolean && etternavnBoolean && epostBoolean && validerTlf() && validerDropdown()) {
         <!--Sender godkjent billett til controller-->
         $.post("/leggTilBillett", billett, function (data) {
             // funksjon som henter fra server
@@ -93,7 +99,6 @@ function lagObjekt() {
         }
         if (epost.value !=="") {
             epost.value = "";
-
         }
     }
 
@@ -101,15 +106,41 @@ function lagObjekt() {
 
 }
 function validerTlf(){
-    let tlf = $("#tlf").val();
-    let regex = "[0-9] {4}";
-    if (!regex.test(tlf)){
-        alert("Feil antall strenger, skriv på nytt");
-        return true;
+    const tlf = $("#tlf").val();
+    const re = /^[0-9]{8}$/; // tall 0-9 og maks 8 siffer
+    const ok = re.test(tlf);
+    if (!ok){
+        $("#feilTlf").html("Skriv inn riktig tlf");
+        return false; // koden oppe kan ikke kjøres før den returnerer true
     } else {
+        $("#feilTlf").html(""); //resetter feilmld felt
+        return true;
+    }
+
+    /*
+    Andre regex koder:
+    // alle tegn, bokstaver og tall som godtas. minst 2 bokstaver, maks 20
+
+    navn: /^[a-zA-ZæøåÆØÅ. \-]{2,20}$/;
+    adresse: /^[0-9a-zA-ZæøåÆØÅ. \-]{2,30}$/;
+
+    merke: // første bokstav, andre bokstav, siffere
+    /^[A-Z][A-Z][0-9]{5}$/;
+     */
+}
+
+//validering med dropdown
+function ValiderDropdown(){
+    const film = $("#filmDropdown").val();
+    if (film === "Default"){
+        $("#feilfilmDropdown").html("Husk å velge film");
         return false;
+    } else {
+        $("#feilfilmDropdown").html("");
+        return true;
     }
 }
+
 //henter info fra server
 function hent (){
     $.get("/hentBilletter", function (data){

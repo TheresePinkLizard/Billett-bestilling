@@ -67,7 +67,7 @@ function lagObjekt() {
         epostBoolean = true;
     }
     // sjekker at alt er klart før posting
-    if (filmBoolean && antallBoolean && fornavnBoolean && etternavnBoolean && tlfBoolean && epostBoolean) {
+    if (filmBoolean && antallBoolean && fornavnBoolean && etternavnBoolean && tlfBoolean && epostBoolean && validerTlf()) {
         <!--Sender godkjent billett til controller-->
         $.post("/leggTilBillett", billett, function (data) {
             // funksjon som henter fra server
@@ -99,6 +99,16 @@ function lagObjekt() {
 
 
 
+}
+function validerTlf(){
+    let tlf = $("#tlf").val();
+    let regex = "[0-9] {4}";
+    if (!regex.test(tlf)){
+        alert("Feil antall strenger, skriv på nytt");
+        return true;
+    } else {
+        return false;
+    }
 }
 //henter info fra server
 function hent (){

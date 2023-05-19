@@ -16,7 +16,7 @@ function lagObjekt() {
     let feil = "Du må fylle ut dette feltet ";
 
     // en boolean for hvert felt for at ingenting blir postet før alt er riktig
-    let filmBoolean;
+   // let filmBoolean;
     let antallBoolean;
     let fornavnBoolean;
     let etternavnBoolean;
@@ -72,7 +72,8 @@ function lagObjekt() {
         epostBoolean = true;
     }
     // sjekker at alt er klart før posting
-    //tlfBoolean && filmBoolean
+    //tlfBoolean && filmBoolean byttet ut med validering
+
     if (antallBoolean && fornavnBoolean && etternavnBoolean && epostBoolean && validerTlf() && validerDropdown()) {
         <!--Sender godkjent billett til controller-->
         $.post("/leggTilBillett", billett, function (data) {
@@ -101,10 +102,17 @@ function lagObjekt() {
             epost.value = "";
         }
     }
-
-
-
 }
+/*
+Andre regex koder:
+// alle tegn, bokstaver og tall som godtas. minst 2 bokstaver, maks 20
+
+navn: /^[a-zA-ZæøåÆØÅ. \-]{2,20}$/;
+adresse: /^[0-9a-zA-ZæøåÆØÅ. \-]{2,30}$/;
+
+merke: // første bokstav, andre bokstav, siffere
+/^[A-Z][A-Z][0-9]{5}$/;
+ */
 function validerTlf(){
     const tlf = $("#tlf").val();
     const re = /^[0-9]{8}$/; // tall 0-9 og maks 8 siffer
@@ -117,20 +125,10 @@ function validerTlf(){
         return true;
     }
 
-    /*
-    Andre regex koder:
-    // alle tegn, bokstaver og tall som godtas. minst 2 bokstaver, maks 20
-
-    navn: /^[a-zA-ZæøåÆØÅ. \-]{2,20}$/;
-    adresse: /^[0-9a-zA-ZæøåÆØÅ. \-]{2,30}$/;
-
-    merke: // første bokstav, andre bokstav, siffere
-    /^[A-Z][A-Z][0-9]{5}$/;
-     */
 }
 
 //validering med dropdown
-function ValiderDropdown(){
+function validerDropdown(){
     const film = $("#filmDropdown").val();
     if (film === "Default"){
         $("#feilfilmDropdown").html("Husk å velge film");
@@ -149,7 +147,8 @@ function hent (){
 }
 // sender billetter ut i div
 function formaterData(data){
-    let ut = "<table class='table'><tr> <th>Film:</th><th>Fornavn: </th> <th>Etternavn: </th> <th> Antall: </th> <th> Tlf: </th> <th> Epost: </th></tr>";
+    let ut = "<table class='table'><tr> <th>Film:</th><th>Fornavn: </th> " +
+        "<th>Etternavn: </th> <th> Antall: </th> <th> Tlf: </th> <th> Epost: </th></tr>";
 
     for (let billett of data){
         ut += "<tr>"+"<td>"+ billett.filmDropdown +"</td>"+
@@ -163,11 +162,17 @@ function formaterData(data){
 
 }
 
+// endre verdi
+function endre(){
+    $.post("/endre", billett, function (data) {
+
+    })
+}
 
 // slett billetter knapp og tømmer array
-    function emptyArray() {
-        $.get("/slettBillettene", function () {
+function emptyArray() {
+    $.get("/slettBillettene", function () {
             hent();
-        })
-    }
+    })
+}
 

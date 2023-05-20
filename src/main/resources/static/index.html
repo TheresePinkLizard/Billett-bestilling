@@ -114,17 +114,18 @@
 </div>
 <div>
   <h2> Alle billetter</h2>
+    <button onclick="hent()">Hent billetter</button>
   <!--Knapp som tømmer array-->
-  <button id="knapp2" onClick="emptyArray()">Slett alle billettene</button>
+  <button  onClick="emptyArray()">Slett alle billettene</button>
 <!--Knapp som endrer rep-->
  <br><br><br>
 
-  <label for="endreHvilken">Hvilken verdi ønsker du å endre </label><br>
-  <input  type="verdiTilEndring" id="endreHvilken"/><br>
-  <label for="endreVerdi">Ny verdi </label><br>
-  <input  type="nyVerdi" id="endreVerdi"/><br>
-  <button id="endre()">Trykk for å endre</button>
-
+  <label for="verdiTilEndring">Hvilken verdi ønsker du å endre </label><br>
+  <input  type="text" id="verdiTilEndring"/><br>
+  <label for="nyVerdi">Ny verdi </label><br>
+  <input  type="text" id="nyVerdi"/><br>
+  <button onclick="endre()">Trykk for å endre</button>
+    <div id="statusEndring"></div>
   <!--billetter skrives ut her-->
   <div id="alleBillettene">
   </div>

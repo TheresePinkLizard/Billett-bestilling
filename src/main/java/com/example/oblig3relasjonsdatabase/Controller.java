@@ -21,7 +21,7 @@ public class Controller {
     //mottar billetter
     @PostMapping("/leggTilBillett")
     public void leggTil (Billett enBillett){
-       /* if(validerBillettOK(billett)){
+        /* if(validerBillettOK(billett)){
 
         } else {
 
@@ -38,17 +38,18 @@ public class Controller {
     }
 
     @PostMapping("/endre")
-    public void endre (Billett endre){
+    public String endre (Endring endre){
         List<Billett> liste = rep.findAll();
-
         // løpe igjennom rep, finne og gjøre endringer
         for(Billett billett : liste){
-            if (billett.getEtternavn().equals()){
-                billett.setEtternavn("Olsen");
+            if (billett.getEtternavn().equals(endre.getGammelVerdi())){
+                billett.setEtternavn(endre.getNyVerdi());
                 rep.save(billett);
             }
-        }
+        } return "Endring lagret";
     }
+
+
 
     // slette billetter
     @GetMapping("/slettBillettene")

@@ -82,25 +82,18 @@ function lagObjekt() {
         })
 
         // resetter felter
+        /* Gammel metode:
         if (antall.value !=="") {
             antall.value = "";
         }
+        Ny:
+         */
+        $("#antall").val("");
+        $("#fornavn").val("");
+        $("#etternavn").val("");
+        $("#tlf").val("");
+        $("#epost").val("");
 
-        if (fornavn.value !=="") {
-            fornavn.value = "";
-
-        }
-        if (etternavn.value !=="") {
-            etternavn.value = "";
-
-        }
-        if (tlf.value !=="") {
-            tlf.value = "";
-
-        }
-        if (epost.value !=="") {
-            epost.value = "";
-        }
     }
 }
 /*
@@ -147,6 +140,7 @@ function hent (){
 }
 // sender billetter ut i div
 function formaterData(data){
+    // uten bootstrap: "<table>
     let ut = "<table class='table'><tr> <th>Film:</th><th>Fornavn: </th> " +
         "<th>Etternavn: </th> <th> Antall: </th> <th> Tlf: </th> <th> Epost: </th></tr>";
 
@@ -168,9 +162,11 @@ function endre(){
     let endring ={
         gammelVerdi: $('#verdiTilEndring').val(),
         nyVerdi: $('#nyVerdi').val(),
-    }
+    };
     $.post("/endre", endring, function (data) {
-
+        $("#statusEndring").val(data);
+        console.log(data);
+        hent();
     })
 }
 

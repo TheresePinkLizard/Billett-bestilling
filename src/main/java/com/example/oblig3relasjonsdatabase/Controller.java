@@ -37,13 +37,13 @@ public class Controller {
 
     }
 
-    @GetMapping("/endre")
-    public void endre (){
+    @PostMapping("/endre")
+    public void endre (Billett endre){
         List<Billett> liste = rep.findAll();
 
         // løpe igjennom rep, finne og gjøre endringer
         for(Billett billett : liste){
-            if (billett.getEtternavn().equals("Hansen")){
+            if (billett.getEtternavn().equals()){
                 billett.setEtternavn("Olsen");
                 rep.save(billett);
             }

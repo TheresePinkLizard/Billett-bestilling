@@ -163,8 +163,13 @@ function formaterData(data){
 }
 
 // endre verdi
+
 function endre(){
-    $.post("/endre", billett, function (data) {
+    let endring ={
+        gammelVerdi: $('#verdiTilEndring').val(),
+        nyVerdi: $('#nyVerdi').val(),
+    }
+    $.post("/endre", endring, function (data) {
 
     })
 }

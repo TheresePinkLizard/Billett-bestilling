@@ -28,7 +28,6 @@ public class Billett {
     private String epost;
 
 
-
 /*
     @Override
     public String toString() {

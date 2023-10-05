@@ -1,4 +1,4 @@
-Oblig 3
+WIP prosjekt
 
 
 OsloMet brukernavn: S333329
@@ -12,3 +12,4 @@ Youtube lenke: https://youtu.be/MCOa_tdDtRA
 Fullt navn: Therese Trollbu
 
 Kort beskrivelse av applikasjon (5-10 setninger): Oblig 3
+

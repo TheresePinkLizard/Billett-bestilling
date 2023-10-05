@@ -1,15 +1,8 @@
-WIP prosjekt
+Code from the semester assignment Spring 2023.
 
+Video demonstrasjon: https://youtu.be/MCOa_tdDtRA
 
-OsloMet brukernavn: S333329
-
-GitHub brukernavn: TheresePinkLizard
-
-Github repo URL: https://github.com/data1700-v23/oblig-3-TheresePinkLizard.git
-
-Youtube lenke: https://youtu.be/MCOa_tdDtRA
-
-Fullt navn: Therese Trollbu
-
-Kort beskrivelse av applikasjon (5-10 setninger): Oblig 3
-
+Contents:
+- Tickets must meet regex requirements
+- then they are moved to a server using java and registered to a database
+- Its then received back to frontend and displayed on the webpage
